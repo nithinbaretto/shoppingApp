@@ -24,8 +24,8 @@ class _BodyState extends State<Body> {
           Container(
             padding: EdgeInsets.only(
               left: 10,
-              top: 10,
-              bottom: 10,
+              top: 15,
+              bottom: 15,
             ),
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(10)),
@@ -46,6 +46,7 @@ class _BodyState extends State<Body> {
                   child: Align(
                     alignment: Alignment.centerRight,
                     child: Container(
+                      margin: EdgeInsets.only(right: 20),
                       height: 20,
                       width: 20,
                       child: Image.asset("assets/images/cam.png"),
@@ -61,8 +62,8 @@ class _BodyState extends State<Body> {
           Container(
             padding: EdgeInsets.only(
               left: 10,
-              top: 10,
-              bottom: 10,
+              top: 15,
+              bottom: 15,
             ),
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(10)),
@@ -105,8 +106,8 @@ class _BodyState extends State<Body> {
           Container(
             padding: EdgeInsets.only(
               left: 10,
-              top: 10,
-              bottom: 10,
+              top: 15,
+              bottom: 15,
             ),
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(10)),
@@ -149,8 +150,8 @@ class _BodyState extends State<Body> {
           Container(
             padding: EdgeInsets.only(
               left: 10,
-              top: 10,
-              bottom: 10,
+              top: 15,
+              bottom: 15,
             ),
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(10)),
@@ -175,6 +176,7 @@ class _BodyState extends State<Body> {
                 Expanded(
                   flex: 1,
                   child: Container(
+                    margin: EdgeInsets.only(right: 20),
                     alignment: Alignment.centerRight,
                     height: 20,
                     width: 20,
@@ -191,7 +193,7 @@ class _BodyState extends State<Body> {
             height: 10,
           ),
           Container(
-            padding: EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 0),
+            padding: EdgeInsets.only(top: 15, bottom: 5, left: 10, right: 0),
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(10)),
             child: Column(

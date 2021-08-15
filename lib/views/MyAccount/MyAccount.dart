@@ -17,6 +17,7 @@ class _MyAccountState extends State<MyAccount> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Constant.bgcolor,
       body: SafeArea(
           child: SingleChildScrollView(
               child: Column(
@@ -48,6 +49,9 @@ class _MyAccountState extends State<MyAccount> {
                       borderRadius: BorderRadius.circular(10)),
                   child: Column(
                     children: [
+                      SizedBox(
+                        height: 10,
+                      ),
                       Row(
                         children: [
                           Expanded(
@@ -94,10 +98,12 @@ class _MyAccountState extends State<MyAccount> {
                       if (Responsive.isMobile(context))
                         Row(
                           children: [
-                            Expanded(
-                              child: CheckBoxWidget(
-                                val: false,
-                                txt: 'Bakery',
+                            Container(
+                              child: Expanded(
+                                child: CheckBoxWidget(
+                                  val: false,
+                                  txt: 'Bakery',
+                                ),
                               ),
                             ),
                             Expanded(
@@ -108,7 +114,10 @@ class _MyAccountState extends State<MyAccount> {
                             ),
                             Spacer()
                           ],
-                        )
+                        ),
+                      SizedBox(
+                        height: 10,
+                      ),
                     ],
                   ),
                 ),
@@ -364,6 +373,9 @@ class _MyAccountState extends State<MyAccount> {
                       borderRadius: BorderRadius.circular(10)),
                   child: Column(
                     children: [
+                      SizedBox(
+                        height: 10,
+                      ),
                       Row(
                         children: [
                           Expanded(
@@ -423,7 +435,10 @@ class _MyAccountState extends State<MyAccount> {
                             ),
                           ),
                         ],
-                      )
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
                     ],
                   ),
                 ),
@@ -445,6 +460,9 @@ class _MyAccountState extends State<MyAccount> {
                       borderRadius: BorderRadius.circular(10)),
                   child: Column(
                     children: [
+                      SizedBox(
+                        height: 10,
+                      ),
                       Row(
                         children: [
                           Expanded(
@@ -538,7 +556,10 @@ class _MyAccountState extends State<MyAccount> {
                             ),
                           Spacer()
                         ],
-                      )
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
                     ],
                   ),
                 ),
@@ -560,11 +581,17 @@ class _MyAccountState extends State<MyAccount> {
                         borderRadius: BorderRadius.circular(10)),
                     child: Column(
                       children: [
+                        SizedBox(
+                          height: 10,
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Container(
-                              margin: EdgeInsets.only(left: 10, top: 10),
+                              margin: EdgeInsets.only(
+                                left: 20,
+                                top: 10,
+                              ),
                               child: Text("\$00",
                                   style: TextStyle(color: Color(0xffC8BEB7))),
                             ),
@@ -594,6 +621,9 @@ class _MyAccountState extends State<MyAccount> {
                               });
                             },
                           ),
+                        ),
+                        SizedBox(
+                          height: 10,
                         ),
                       ],
                     )),

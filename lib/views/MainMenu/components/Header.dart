@@ -17,6 +17,7 @@ class Header extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
+              margin: EdgeInsets.symmetric(horizontal: 20),
               padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(5)),
@@ -32,6 +33,7 @@ class Header extends StatelessWidget {
               ),
             ),
             Container(
+              margin: EdgeInsets.symmetric(horizontal: 20),
               padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(5)),
@@ -40,6 +42,9 @@ class Header extends StatelessWidget {
           ],
         ),
         Container(
+          margin: EdgeInsets.only(
+            left: 20,
+          ),
           height: 40,
           width: MediaQuery.of(context).size.width,
           child: ListView.separated(
@@ -51,7 +56,9 @@ class Header extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  margin:
+                      EdgeInsets.only(right: index == img.length - 1 ? 20 : 0),
+                  padding: EdgeInsets.symmetric(horizontal: 15),
                   decoration: BoxDecoration(
                       color: index == 1 ? Constant.mainColor : Colors.white,
                       borderRadius: BorderRadius.circular(10)),
@@ -70,7 +77,7 @@ class Header extends StatelessWidget {
                             color: index == 1 ? Colors.white : Colors.black),
                       ),
                       SizedBox(
-                        width: 5,
+                        width: 10,
                       ),
                       Container(
                         height: 17,

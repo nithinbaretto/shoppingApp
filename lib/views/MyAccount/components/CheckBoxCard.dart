@@ -15,7 +15,7 @@ class CheckBoxWidget extends StatelessWidget {
     return Row(
       children: [
         Container(
-          margin: EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 5),
+          margin: EdgeInsets.only(top: 10, bottom: 10, left: 20, right: 5),
           height: 20,
           width: 20,
           decoration: BoxDecoration(
@@ -27,12 +27,14 @@ class CheckBoxWidget extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        Container(
-          child: Text(
-            txt,
-            maxLines: 2,
-            overflow: TextOverflow.fade,
-            style: TextStyle(fontSize: 12, color: Color(0xff6E5D51)),
+        Flexible(
+          child: Container(
+            child: Text(
+              txt,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontSize: 12, color: Color(0xff6E5D51)),
+            ),
           ),
         )
       ],

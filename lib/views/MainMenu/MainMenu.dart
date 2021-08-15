@@ -20,84 +20,91 @@ class MainMenu extends StatelessWidget {
     return Scaffold(
       backgroundColor: Constant.bgcolor,
       body: SafeArea(
-          child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          children: [
-            Header(img: img),
-            SizedBox(
-              height: 20,
-            ),
-            if (!Responsive.isMobile(context))
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+          child: Column(
+        children: [
+          Container(
+            child: Header(img: img),
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
+                if (!Responsive.isMobile(context))
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        child: Text("Menus"),
+                      Row(
+                        children: [
+                          Container(
+                            child: Text("Menus"),
+                          ),
+                          Container(
+                            child: Icon(Icons.chevron_right),
+                          ),
+                          Container(
+                            child: Text("Main Menu"),
+                          ),
+                        ],
                       ),
-                      Container(
-                        child: Icon(Icons.chevron_right),
-                      ),
-                      Container(
-                        child: Text("Main Menu"),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        child: Text("Show in.. "),
-                      ),
-                      Container(
-                        height: 20,
-                        width: 40,
-                        child: Image.asset("assets/images/Group 7991.png"),
+                      Row(
+                        children: [
+                          Container(
+                            child: Text("Show in.. "),
+                          ),
+                          Container(
+                            height: 20,
+                            width: 40,
+                            child: Image.asset("assets/images/Group 7991.png"),
+                          )
+                        ],
                       )
                     ],
-                  )
-                ],
-              ),
-            if (!Responsive.isMobile(context))
-              SizedBox(
-                height: 20,
-              ),
-            Body(),
-            SizedBox(
-              height: 40,
-            ),
-            if (Responsive.isMobile(context))
-              ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all(Color(0xffB5C730)),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15.0))),
                   ),
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 15),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.add,
-                          size: 20,
+                if (!Responsive.isMobile(context))
+                  SizedBox(
+                    height: 20,
+                  ),
+                Body(),
+                SizedBox(
+                  height: 40,
+                ),
+                if (Responsive.isMobile(context))
+                  ElevatedButton(
+                      onPressed: () {},
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(Color(0xffB5C730)),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(15.0))),
+                      ),
+                      child: Container(
+                        padding: EdgeInsets.symmetric(vertical: 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.add,
+                              size: 20,
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              "Add Item",
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ],
                         ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text(
-                          "Add Item",
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ],
-                    ),
-                  ))
-          ],
-        ),
+                      ))
+              ],
+            ),
+          ),
+        ],
       )),
     );
   }

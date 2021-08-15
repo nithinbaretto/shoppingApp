@@ -134,7 +134,7 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: Responsive.isMobile(context) ? 20 : 30,
+                  height: Responsive.isMobile(context) ? 32 : 30,
                 ),
                 Container(
                   child: Container(
@@ -145,7 +145,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
                 Row(
                   mainAxisAlignment: Responsive.isMobile(context)
@@ -182,7 +182,7 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: Responsive.isMobile(context) ? 20 : 30,
+                  height: Responsive.isMobile(context) ? 30 : 30,
                 ),
                 Container(
                   child: Container(
@@ -193,7 +193,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
                 Row(
                   children: [
@@ -208,7 +208,9 @@ class HomePage extends StatelessWidget {
                       },
                     ),
                     SizedBox(
-                      width: Responsive.isMobile(context) ? 10 : 20,
+                      width: Responsive.isMobile(context)
+                          ? MediaQuery.of(context).size.width * 0.074
+                          : 20,
                     ),
                     CardWidget(
                       img: "assets/images/map.png",

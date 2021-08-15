@@ -18,8 +18,10 @@ class CardItem extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10), color: Colors.white),
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
             flex: 3,
@@ -45,6 +47,7 @@ class CardItem extends StatelessWidget {
           Expanded(
             flex: 2,
             child: Container(
+              padding: EdgeInsets.only(top: 2),
               child: Text(
                 itName,
                 style: TextStyle(color: Color(0xff6E5D51)),

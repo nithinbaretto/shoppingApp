@@ -9,6 +9,8 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(MediaQuery.of(context).size.height);
+    print(MediaQuery.of(context).size.width);
     return Scaffold(
       backgroundColor: Constant.bgcolor,
       body: SafeArea(
@@ -53,7 +55,7 @@ class LoginPage extends StatelessWidget {
                 sufIcon: Icons.visibility_off,
               ),
               SizedBox(
-                height: Responsive.isMobile(context) ? 10 : 30,
+                height: Responsive.isMobile(context) ? 30 : 30,
               ),
               Container(
                 margin: EdgeInsets.symmetric(
@@ -82,9 +84,9 @@ class LoginPage extends StatelessWidget {
                         ),
                         child: Container(
                           padding: EdgeInsets.symmetric(
-                              vertical: Responsive.isMobile(context) ? 0 : 15,
+                              vertical: Responsive.isMobile(context) ? 10 : 15,
                               horizontal:
-                                  Responsive.isMobile(context) ? 10 : 100),
+                                  Responsive.isMobile(context) ? 15 : 100),
                           child: Row(
                             children: [
                               Container(
@@ -109,7 +111,7 @@ class LoginPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: Responsive.isMobile(context) ? 20 : 20),
+              SizedBox(height: Responsive.isMobile(context) ? 10 : 20),
               Divider(
                 indent: Responsive.isMobile(context) ? 20 : 40,
                 endIndent: Responsive.isMobile(context) ? 20 : 40,
@@ -152,7 +154,7 @@ class LoginPage extends StatelessWidget {
                         Container(
                             margin: EdgeInsets.symmetric(
                                 vertical:
-                                    Responsive.isMobile(context) ? 0 : 15),
+                                    Responsive.isMobile(context) ? 10 : 15),
                             height: 24,
                             width: 24,
                             child: Image.asset("assets/images/Add User.png")),
@@ -170,6 +172,9 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 30,
+              )
             ],
           ),
         ),

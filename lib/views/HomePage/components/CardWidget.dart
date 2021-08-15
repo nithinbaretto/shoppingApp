@@ -27,8 +27,12 @@ class CardWidget extends StatelessWidget {
                   left: Responsive.isMobile(context) ? 26 : 30,
                   right: Responsive.isMobile(context) ? 26 : 30,
                   top: 15),
-              height: Responsive.isMobile(context) ? 50 : 72,
-              width: Responsive.isMobile(context) ? 50 : 72,
+              height: Responsive.isMobile(context)
+                  ? MediaQuery.of(context).size.height * 0.056
+                  : 72,
+              width: Responsive.isMobile(context)
+                  ? MediaQuery.of(context).size.width * 0.121
+                  : 72,
               child: Image.asset(img),
             ),
             SizedBox(

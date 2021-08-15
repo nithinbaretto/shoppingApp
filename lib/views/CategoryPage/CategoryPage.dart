@@ -48,21 +48,27 @@ class Categorypage extends StatelessWidget {
                 ),
                 Text(
                   "Choose",
-                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff482C2A)),
                 ),
                 Row(
                   children: [
                     Text(
                       "Your Favorite",
-                      style:
-                          TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 32,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff482C2A)),
                     ),
                     Text(
                       " Food",
                       style: TextStyle(
-                          fontSize: 32,
-                          color: Color(0xffFF6B01),
-                          fontWeight: FontWeight.bold),
+                        fontSize: 32,
+                        color: Color(0xffFF6B01),
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ],
                 ),
@@ -122,11 +128,12 @@ class Categorypage extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 10),
                     width: MediaQuery.of(context).size.width,
                     child: ListView.separated(
                         separatorBuilder: (BuildContext context, int index) {
                           return SizedBox(
-                            width: Responsive.isMobile(context) ? 20 : 40,
+                            width: Responsive.isMobile(context) ? 23 : 40,
                           );
                         },
                         scrollDirection: Axis.horizontal,
@@ -134,7 +141,7 @@ class Categorypage extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return Container(
                             margin: EdgeInsets.only(
-                                top: Responsive.isMobile(context) ? 0 : 30),
+                                top: Responsive.isMobile(context) ? 5 : 30),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
                                 color: index == 0
@@ -153,8 +160,10 @@ class Categorypage extends StatelessWidget {
                                     color: index == 0
                                         ? Colors.white
                                         : Color(0xff6E5D51),
-                                    height: 24,
-                                    width: 24,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.028,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.061,
                                   ),
                                 ),
                                 SizedBox(
@@ -191,7 +200,7 @@ class Categorypage extends StatelessWidget {
                             child: Container(
                               margin: EdgeInsets.only(
                                 top: 40,
-                                bottom: Responsive.isMobile(context) ? 40 : 120,
+                                bottom: Responsive.isMobile(context) ? 30 : 120,
                               ),
                               padding: EdgeInsets.only(
                                   left: Responsive.isMobile(context) ? 0 : 20,
@@ -209,11 +218,15 @@ class Categorypage extends StatelessWidget {
                                       "assets/images/image-removebg-preview (5) 1.png",
                                       height: Responsive.isMobile(context)
                                           ? 154
+                                          // MediaQuery.of(context).size.width *
+                                          //     0.172
                                           : 174,
                                       width: Responsive.isMobile(context)
-                                          ? 200
+                                          ? 216
+                                          // MediaQuery.of(context).size.width *
+                                          //     0.522
                                           : 245,
-                                      fit: BoxFit.fitHeight,
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                   Container(
@@ -242,10 +255,8 @@ class Categorypage extends StatelessWidget {
                                     height: 10,
                                   ),
                                   Container(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: Responsive.isMobile(context)
-                                            ? 20
-                                            : 0),
+                                    padding:
+                                        EdgeInsets.only(left: 20, right: 10),
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
@@ -259,7 +270,10 @@ class Categorypage extends StatelessWidget {
                                           ),
                                         ),
                                         SizedBox(
-                                          width: 30,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.145,
                                         ),
                                         Container(
                                             alignment: Alignment.bottomLeft,
