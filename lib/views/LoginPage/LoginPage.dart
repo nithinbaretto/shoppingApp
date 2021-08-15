@@ -21,8 +21,8 @@ class LoginPage extends StatelessWidget {
                 height: 40,
               ),
               Container(
-                height: 100,
-                width: 75,
+                height: Responsive.isMobile(context) ? 100 : 122,
+                width: Responsive.isMobile(context) ? 75 : 92,
                 decoration: BoxDecoration(),
                 child: Image.asset(
                   "assets/images/delicious logo 3.png",
@@ -32,8 +32,8 @@ class LoginPage extends StatelessWidget {
                 height: 20,
               ),
               Container(
-                height: 260,
-                width: 260,
+                height: Responsive.isMobile(context) ? 260 : 370,
+                width: Responsive.isMobile(context) ? 260 : 370,
                 child: Image.asset("assets/images/Accept tasks-amico 1.png"),
               ),
               SizedBox(
@@ -53,10 +53,11 @@ class LoginPage extends StatelessWidget {
                 sufIcon: Icons.visibility_off,
               ),
               SizedBox(
-                height: 10,
+                height: Responsive.isMobile(context) ? 10 : 30,
               ),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 20),
+                margin: EdgeInsets.symmetric(
+                    horizontal: Responsive.isMobile(context) ? 20 : 40),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -81,8 +82,9 @@ class LoginPage extends StatelessWidget {
                         ),
                         child: Container(
                           padding: EdgeInsets.symmetric(
+                              vertical: Responsive.isMobile(context) ? 0 : 15,
                               horizontal:
-                                  Responsive.isMobile(context) ? 10 : 20),
+                                  Responsive.isMobile(context) ? 10 : 100),
                           child: Row(
                             children: [
                               Container(
@@ -93,7 +95,12 @@ class LoginPage extends StatelessWidget {
                               SizedBox(
                                 width: 10,
                               ),
-                              Text("Sign In"),
+                              Text(
+                                "Sign In",
+                                style: TextStyle(
+                                    fontSize:
+                                        Responsive.isMobile(context) ? 16 : 18),
+                              ),
                             ],
                           ),
                         ),
@@ -102,9 +109,14 @@ class LoginPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 20,
+              SizedBox(height: Responsive.isMobile(context) ? 20 : 20),
+              Divider(
+                indent: Responsive.isMobile(context) ? 20 : 40,
+                endIndent: Responsive.isMobile(context) ? 20 : 40,
+                thickness: 1,
+                color: Colors.white,
               ),
+              SizedBox(height: Responsive.isMobile(context) ? 20 : 30),
               Container(
                 child: Text(
                   "You don't yet have an account?",
@@ -112,10 +124,11 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 20,
               ),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 20),
+                margin: EdgeInsets.symmetric(
+                    horizontal: Responsive.isMobile(context) ? 20 : 40),
                 padding: EdgeInsets.symmetric(vertical: 10),
                 child: ElevatedButton(
                   // color: Color(0xff6E5D51),
@@ -137,6 +150,9 @@ class LoginPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
+                            margin: EdgeInsets.symmetric(
+                                vertical:
+                                    Responsive.isMobile(context) ? 0 : 15),
                             height: 24,
                             width: 24,
                             child: Image.asset("assets/images/Add User.png")),
@@ -145,13 +161,15 @@ class LoginPage extends StatelessWidget {
                         ),
                         Text(
                           "Create Account",
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: Responsive.isMobile(context) ? 16 : 18),
                         ),
                       ],
                     ),
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
@@ -175,7 +193,8 @@ class InputWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20),
+      margin: EdgeInsets.symmetric(
+          horizontal: Responsive.isMobile(context) ? 20 : 40),
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(15)),
       child: Row(
@@ -196,8 +215,9 @@ class InputWidget extends StatelessWidget {
               data: Theme.of(context).copyWith(primaryColor: Color(0xff200E32)),
               child: TextField(
                 decoration: InputDecoration(
-                    suffixIcon:
-                        helpertxt == "Password..." ? Icon(sufIcon) : null,
+                    suffixIcon: helpertxt == "Password..."
+                        ? Icon(sufIcon, color: Color(0xff200E32))
+                        : null,
                     border: InputBorder.none,
                     hintText: helpertxt,
                     hintStyle:

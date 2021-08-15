@@ -17,16 +17,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Constant.bgcolor,
-        drawer: Drawer(
-          child: Icon(
-            Icons.menu,
-            color: Colors.black,
-          ),
-        ),
         body: SafeArea(
           child: Container(
             padding: EdgeInsets.symmetric(
-                horizontal: Responsive.isMobile(context) ? 20 : 40),
+                horizontal: Responsive.isMobile(context) ? 20 : 50),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -44,7 +38,7 @@ class HomePage extends StatelessWidget {
                       child: Center(
                         child: Container(
                           padding: EdgeInsets.symmetric(
-                            vertical: 30,
+                            vertical: Responsive.isMobile(context) ? 30 : 50,
                           ),
                           child: Text(
                             "Home",
@@ -140,7 +134,7 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 20,
+                  height: Responsive.isMobile(context) ? 20 : 30,
                 ),
                 Container(
                   child: Container(
@@ -188,7 +182,7 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 20,
+                  height: Responsive.isMobile(context) ? 20 : 30,
                 ),
                 Container(
                   child: Container(

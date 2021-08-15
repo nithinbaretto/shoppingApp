@@ -5,10 +5,10 @@ import 'package:shoppingapp/responsive.dart';
 class Categorypage extends StatelessWidget {
   final img = [
     "assets/images/burger2.png",
-    "assets/images/burger2.png",
     "assets/images/soda.png",
     "assets/images/ice-cream.png",
-    "assets/images/Group 7877.png"
+    "assets/images/Group 7877.png",
+    "assets/images/burger2.png"
   ];
   final catName = ["Burger", "Drinks", "Desserts", "Taco", "Burger"];
 
@@ -73,6 +73,7 @@ class Categorypage extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Container(
+                        margin: EdgeInsets.only(right: 10),
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10)),
@@ -148,7 +149,7 @@ class Categorypage extends StatelessWidget {
                                           ? 20
                                           : 60),
                                   child: Image.asset(
-                                    "assets/images/burger2.png",
+                                    img[index],
                                     color: index == 0
                                         ? Colors.white
                                         : Color(0xff6E5D51),

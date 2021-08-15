@@ -26,15 +26,15 @@ class MenuDescription extends StatelessWidget {
                     children: [
                       if (!Responsive.isMobile(context))
                         CardItem(
-                            itName: 'Show in:',
-                            str1: 'USA',
+                            itName: 'Show in',
+                            str1: 'USA:',
                             img: "assets/images/Group 8095.png"),
                       SizedBox(
                         height: 20,
                       ),
                       CardItem(
                         itName: 'Name',
-                        str1: 'Ceasars',
+                        str1: 'Ceasars:',
                         img: "assets/images/Group 8095.png",
                       ),
                       SizedBox(
@@ -43,7 +43,7 @@ class MenuDescription extends StatelessWidget {
                       CardItem(
                         itName:
                             'Lorem ipsum dolor sit amet, consectetur adipiscing',
-                        str1: 'Description',
+                        str1: 'Description:',
                         img: "assets/images/Group 8095.png",
                       ),
                       SizedBox(
@@ -52,7 +52,7 @@ class MenuDescription extends StatelessWidget {
                       CardItem(
                         itName:
                             'Tomato, leaves, Basil, Mozarella cheese, Chicken',
-                        str1: 'Ingredients',
+                        str1: 'Ingredients:',
                         img: "assets/images/Group 8093.png",
                       ),
                       SizedBox(
@@ -60,21 +60,21 @@ class MenuDescription extends StatelessWidget {
                       ),
                       CardItem(
                           itName: '\$19',
-                          str1: 'Price',
+                          str1: 'Price:',
                           img: "assets/images/Group 8092.png"),
                       SizedBox(
                         height: 20,
                       ),
                       CardItem(
                           itName: '999 Cal',
-                          str1: 'Calories',
+                          str1: 'Calories:',
                           img: "assets/images/calories 1.png"),
                       SizedBox(
                         height: 20,
                       ),
                       CardItem(
                           itName: '15 min',
-                          str1: 'Time to Prepare',
+                          str1: 'Time to Prepare:',
                           img: "assets/images/Group 7939.png"),
                       SizedBox(
                         height: 20,
@@ -104,7 +104,7 @@ class MenuDescription extends StatelessWidget {
                                   ),
                                   Container(
                                     child: Text(
-                                      "Rating",
+                                      "Rating:",
                                       style: TextStyle(
                                           color: Color(0xff482C2A),
                                           fontSize: 16),
@@ -190,7 +190,7 @@ class MenuDescription extends StatelessWidget {
                                   ),
                                   Container(
                                     child: Text(
-                                      "Rating",
+                                      "Likes:",
                                       style: TextStyle(
                                           color: Color(0xff482C2A),
                                           fontSize: 16),

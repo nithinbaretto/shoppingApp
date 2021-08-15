@@ -22,22 +22,35 @@ class _BodyState extends State<Body> {
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.only(left: 10, top: 10, bottom: 10, right: 15),
+            padding: EdgeInsets.only(
+              left: 10,
+              top: 10,
+              bottom: 10,
+            ),
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(10)),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  child: Text(
-                    "Background Photo:",
-                    style: TextStyle(color: Color(0xff482C2A)),
+                Expanded(
+                  flex: 3,
+                  child: Container(
+                    child: Text(
+                      "Background Photo:",
+                      style: TextStyle(color: Color(0xff482C2A)),
+                    ),
                   ),
                 ),
-                Container(
-                  height: 20,
-                  width: 20,
-                  child: Image.asset("assets/images/cam.png"),
+                Spacer(),
+                Flexible(
+                  flex: 2,
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Container(
+                      height: 20,
+                      width: 20,
+                      child: Image.asset("assets/images/cam.png"),
+                    ),
+                  ),
                 )
               ],
             ),
@@ -74,11 +87,13 @@ class _BodyState extends State<Body> {
                 ),
                 Expanded(
                   flex: 3,
-                  child: Container(
+                  child: Align(
                     alignment: Alignment.centerRight,
-                    height: 20,
-                    width: 20,
-                    child: Image.asset("assets/images/Group 7995.png"),
+                    child: Container(
+                      height: 20,
+                      width: 20,
+                      child: Image.asset("assets/images/Group 7995.png"),
+                    ),
                   ),
                 )
               ],
@@ -105,7 +120,7 @@ class _BodyState extends State<Body> {
                   ),
                 ),
                 Flexible(
-                  fit: FlexFit.loose,
+                  // fit: FlexFit.loose,
                   child: Container(
                     height: 24,
                     width: 24,
@@ -120,7 +135,9 @@ class _BodyState extends State<Body> {
                     alignment: Alignment.centerRight,
                     height: 20,
                     width: 20,
-                    child: Image.asset("assets/images/Group 7995.png"),
+                    child: Image.asset(
+                      "assets/images/Group 7995.png",
+                    ),
                   ),
                 )
               ],
@@ -130,7 +147,11 @@ class _BodyState extends State<Body> {
             height: 10,
           ),
           Container(
-            padding: EdgeInsets.only(left: 10, top: 10, bottom: 10, right: 10),
+            padding: EdgeInsets.only(
+              left: 10,
+              top: 10,
+              bottom: 10,
+            ),
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(10)),
             child: Row(
@@ -143,15 +164,16 @@ class _BodyState extends State<Body> {
                   ),
                 ),
                 Flexible(
-                  fit: FlexFit.loose,
+                  flex: 3,
                   child: Container(
-                    child: Text("Nimbus Sams",
+                    alignment: Alignment.centerLeft,
+                    child: Text("Nimbus sams",
                         style:
                             TextStyle(color: Color(0xff6E5D51), fontSize: 12)),
                   ),
                 ),
                 Expanded(
-                  flex: 3,
+                  flex: 1,
                   child: Container(
                     alignment: Alignment.centerRight,
                     height: 20,
@@ -187,13 +209,18 @@ class _BodyState extends State<Body> {
                     ),
                     Flexible(
                       fit: FlexFit.loose,
-                      child: Container(child: Text("00%")),
+                      child: Container(
+                          child: Text(
+                        "00%",
+                        style: TextStyle(color: Color(0xffC8BEB7)),
+                      )),
                     ),
                     Expanded(
                         flex: 3,
                         child: Container(
                             alignment: Alignment.centerRight,
-                            child: Text("00%")))
+                            child: Text("00%",
+                                style: TextStyle(color: Color(0xffC8BEB7)))))
                   ],
                 ),
                 Row(
