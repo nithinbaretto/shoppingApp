@@ -305,7 +305,7 @@ class _MyAccountState extends State<MyAccount> {
                         ],
                       ),
                       SizedBox(
-                        height: 10,
+                        height: Responsive.isMobile(context) ? 10 : 30,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -536,6 +536,8 @@ class _MyAccountState extends State<MyAccount> {
                                 txt: 'Carribean',
                               ),
                             ),
+                          if (!Responsive.isMobile(context)) Spacer(),
+                          if (!Responsive.isMobile(context)) Spacer()
                         ],
                       ),
                       Row(

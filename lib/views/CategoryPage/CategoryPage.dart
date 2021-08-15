@@ -20,115 +20,126 @@ class Categorypage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Container(
             height: MediaQuery.of(context).size.height,
-            padding: EdgeInsets.symmetric(
-              horizontal: Responsive.isMobile(context) ? 20 : 40,
-            ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  child: Row(children: [
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Icon(Icons.menu),
-                    ),
-                    Spacer(),
-                    Container(
-                        height: 44,
-                        width: 44,
-                        margin: EdgeInsets.symmetric(
-                          vertical: 30,
-                        ),
-                        child: Image.asset("assets/images/Ellipse 677.png")),
-                  ]),
-                ),
-                Text(
-                  "Choose",
-                  style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xff482C2A)),
-                ),
-                Row(
-                  children: [
-                    Text(
-                      "Your Favorite",
-                      style: TextStyle(
-                          fontSize: 32,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xff482C2A)),
-                    ),
-                    Text(
-                      " Food",
-                      style: TextStyle(
-                        fontSize: 32,
-                        color: Color(0xffFF6B01),
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: Responsive.isMobile(context) ? 20 : 40,
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        margin: EdgeInsets.only(right: 10),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Theme(
-                          data: Theme.of(context)
-                              .copyWith(primaryColor: Color(0xffbababa)),
-                          child: TextField(
-                            decoration: InputDecoration(
-                                hintText: "Search here your food",
-                                hintStyle: TextStyle(
-                                    fontSize: 14, color: Color(0xffbababa)),
-                                prefixIcon: Icon(Icons.search),
-                                border: InputBorder.none),
+                  margin: EdgeInsets.symmetric(
+                      horizontal: Responsive.isMobile(context) ? 20 : 40),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        child: Row(children: [
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 5, vertical: 5),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(5)),
+                            child: Icon(Icons.menu),
                           ),
+                          Spacer(),
+                          Container(
+                              height: 44,
+                              width: 44,
+                              margin: EdgeInsets.symmetric(
+                                vertical: 30,
+                              ),
+                              child:
+                                  Image.asset("assets/images/Ellipse 677.png")),
+                        ]),
+                      ),
+                      Text(
+                        "Choose",
+                        style: TextStyle(
+                            fontSize: 32,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff482C2A)),
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            "Your Favorite",
+                            style: TextStyle(
+                                fontSize: 32,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xff482C2A)),
+                          ),
+                          Text(
+                            " Food",
+                            style: TextStyle(
+                              fontSize: 32,
+                              color: Color(0xffFF6B01),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: Responsive.isMobile(context) ? 20 : 40,
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              margin: EdgeInsets.only(right: 10),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: Theme(
+                                data: Theme.of(context)
+                                    .copyWith(primaryColor: Color(0xffbababa)),
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                      hintText: "Search here your food",
+                                      hintStyle: TextStyle(
+                                          fontSize: 14,
+                                          color: Color(0xffbababa)),
+                                      prefixIcon: Icon(Icons.search),
+                                      border: InputBorder.none),
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: Responsive.isMobile(context) ? 20 : 40,
+                          ),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 10, vertical: 10),
+                            decoration: BoxDecoration(
+                                color: Color(0xffB5C730),
+                                borderRadius: BorderRadius.circular(5)),
+                            child: Image.asset(
+                              "assets/images/Filter.png",
+                              height: 24,
+                              width: 24,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: Responsive.isMobile(context) ? 20 : 40,
+                      ),
+                      Container(
+                        child: Text(
+                          "Categories",
+                          style: TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.w500),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: Responsive.isMobile(context) ? 20 : 40,
-                    ),
-                    Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                      decoration: BoxDecoration(
-                          color: Color(0xffB5C730),
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Image.asset(
-                        "assets/images/Filter.png",
-                        height: 24,
-                        width: 24,
+                      SizedBox(
+                        height: Responsive.isMobile(context) ? 20 : 20,
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: Responsive.isMobile(context) ? 20 : 40,
-                ),
-                Container(
-                  child: Text(
-                    "Categories",
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                    ],
                   ),
-                ),
-                SizedBox(
-                  height: Responsive.isMobile(context) ? 20 : 20,
                 ),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 10),
+                    margin: EdgeInsets.symmetric(horizontal: 0),
                     width: MediaQuery.of(context).size.width,
                     child: ListView.separated(
                         separatorBuilder: (BuildContext context, int index) {
@@ -141,6 +152,8 @@ class Categorypage extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return Container(
                             margin: EdgeInsets.only(
+                                left: index == 0 ? 30 : 0,
+                                right: index == img.length - 1 ? 30 : 0,
                                 top: Responsive.isMobile(context) ? 5 : 30),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
@@ -153,7 +166,7 @@ class Categorypage extends StatelessWidget {
                                 Container(
                                   padding: EdgeInsets.symmetric(
                                       horizontal: Responsive.isMobile(context)
-                                          ? 20
+                                          ? 25
                                           : 60),
                                   child: Image.asset(
                                     img[index],
@@ -200,6 +213,8 @@ class Categorypage extends StatelessWidget {
                             child: Container(
                               margin: EdgeInsets.only(
                                 top: 40,
+                                left: index == 0 ? 30 : 0,
+                                right: index == img.length - 1 ? 30 : 0,
                                 bottom: Responsive.isMobile(context) ? 30 : 120,
                               ),
                               padding: EdgeInsets.only(

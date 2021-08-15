@@ -17,12 +17,18 @@ class CardWidget extends StatelessWidget {
     return InkWell(
       onTap: press,
       child: Container(
-        decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(10)),
+        decoration: BoxDecoration(boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.02),
+            spreadRadius: 4,
+            blurRadius: 3,
+          ),
+        ], color: Colors.white, borderRadius: BorderRadius.circular(10)),
         alignment: Alignment.center,
         child: Column(
           children: [
             Container(
+              decoration: BoxDecoration(),
               margin: EdgeInsets.only(
                   left: Responsive.isMobile(context) ? 26 : 30,
                   right: Responsive.isMobile(context) ? 26 : 30,

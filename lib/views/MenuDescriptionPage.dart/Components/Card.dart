@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../responsive.dart';
+
 class CardItem extends StatelessWidget {
   final String str1;
   final String itName;
@@ -24,7 +26,7 @@ class CardItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
-            flex: 3,
+            flex: Responsive.isMobile(context) ? 3 : 2,
             child: Row(
               children: [
                 Container(
@@ -45,7 +47,7 @@ class CardItem extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 2,
+            flex: Responsive.isMobile(context) ? 2 : 3,
             child: Container(
               padding: EdgeInsets.only(top: 2),
               child: Text(

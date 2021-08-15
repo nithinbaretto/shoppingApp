@@ -90,7 +90,7 @@ class MenuDescription extends StatelessWidget {
                           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Expanded(
-                              flex: 3,
+                              flex: Responsive.isMobile(context) ? 3 : 2,
                               child: Row(
                                 children: [
                                   Container(
@@ -114,7 +114,7 @@ class MenuDescription extends StatelessWidget {
                               ),
                             ),
                             Expanded(
-                              flex: 2,
+                              flex: Responsive.isMobile(context) ? 2 : 3,
                               child: Container(
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -171,12 +171,12 @@ class MenuDescription extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                             color: Colors.white),
                         padding:
-                            EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                            EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                         child: Row(
                           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Expanded(
-                              flex: 3,
+                              flex: Responsive.isMobile(context) ? 3 : 2,
                               child: Row(
                                 children: [
                                   Container(
@@ -200,7 +200,7 @@ class MenuDescription extends StatelessWidget {
                               ),
                             ),
                             Expanded(
-                              flex: 2,
+                              flex: Responsive.isMobile(context) ? 2 : 3,
                               child: Container(
                                 child: Row(
                                   children: [

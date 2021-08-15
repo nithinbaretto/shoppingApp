@@ -1,228 +1,72 @@
 import 'package:flutter/material.dart';
+
+import 'package:get/get.dart';
 import 'package:shoppingapp/constants/constant.dart';
-import 'package:shoppingapp/views/CategoryPage/CategoryPage.dart';
-import 'package:shoppingapp/views/ColorsAndStyling/ColorsAndStyling.dart';
+import 'package:shoppingapp/controller/NavigationController.dart';
 import 'package:shoppingapp/views/Components/NavigationBar.dart';
-import 'package:shoppingapp/views/HomePage/components/CardWidget.dart';
-import 'package:shoppingapp/views/MainMenu/MainMenu.dart';
-import 'package:shoppingapp/views/MenuDescriptionPage.dart/MenuDescription.dart';
-import 'package:shoppingapp/views/MyAccount/MyAccount.dart';
+import 'package:shoppingapp/views/DashBoardPage.dart';
+import 'package:shoppingapp/views/Page1.dart';
+import 'package:shoppingapp/views/Page2.dart';
+import 'package:shoppingapp/views/Page3.dart';
+import 'package:shoppingapp/views/Page4.dart';
 
 import '../../responsive.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final pages = [DashBoard(), Page1(), Page2(), Page3(), Page4()];
+  final controller = Get.put(NavigationController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Constant.bgcolor,
         body: SafeArea(
+            child: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.symmetric(
                 horizontal: Responsive.isMobile(context) ? 20 : 50),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
+                Column(
                   children: [
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Icon(Icons.menu),
-                    ),
-                    Expanded(
-                      flex: 8,
-                      child: Center(
-                        child: Container(
-                          padding: EdgeInsets.symmetric(
-                            vertical: Responsive.isMobile(context) ? 30 : 50,
+                    Row(
+                      children: [
+                        Container(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Icon(Icons.menu),
+                        ),
+                        Expanded(
+                          flex: 8,
+                          child: Center(
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                vertical:
+                                    Responsive.isMobile(context) ? 30 : 50,
+                              ),
+                              child: Text(
+                                "Home",
+                                style: TextStyle(
+                                    fontSize: 22, fontFamily: "Noto Sans"),
+                              ),
+                            ),
                           ),
-                          child: Text(
-                            "Home",
-                            style: TextStyle(
-                                fontSize: 22, fontFamily: "Noto Sans"),
-                          ),
                         ),
-                      ),
-                    ),
-                    Spacer()
-                  ],
-                ),
-                Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        child: Text(
-                          "Menus",
-                          style: TextStyle(fontSize: 18),
-                        ),
-                      ),
-                      Container(
-                        child: Text(
-                          "See All",
-                          style: TextStyle(color: Color(0xffb5c730)),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: Responsive.isMobile(context)
-                      ? MainAxisAlignment.spaceBetween
-                      : MainAxisAlignment.start,
-                  children: [
-                    CardWidget(
-                      img: "assets/images/burger.png",
-                      text: "Burger",
-                      press: () {
-                        Navigator.of(context)
-                            .push(MaterialPageRoute(builder: (context) {
-                          return Categorypage();
-                        }));
-                      },
-                    ),
-                    if (!Responsive.isMobile(context))
-                      SizedBox(
-                        width: 20,
-                      ),
-                    CardWidget(
-                      img: "assets/images/soda.png",
-                      text: "Drinks",
-                      press: () {
-                        Navigator.of(context)
-                            .push(MaterialPageRoute(builder: (context) {
-                          return ColorsAndStylingPage();
-                        }));
-                      },
-                    ),
-                    if (!Responsive.isMobile(context))
-                      SizedBox(
-                        width: 20,
-                      ),
-                    CardWidget(
-                      img: "assets/images/ice-cream.png",
-                      text: "Desert",
-                      press: () {
-                        Navigator.of(context)
-                            .push(MaterialPageRoute(builder: (context) {
-                          return MainMenu();
-                        }));
-                      },
-                    ),
-                    if (!Responsive.isMobile(context))
-                      SizedBox(
-                        width: 20,
-                      ),
-                    if (!Responsive.isMobile(context))
-                      CardWidget(
-                        img: "assets/images/ice-cream.png",
-                        text: "Desert",
-                        press: () {
-                          Navigator.of(context)
-                              .push(MaterialPageRoute(builder: (context) {
-                            return MainMenu();
-                          }));
-                        },
-                      ),
-                  ],
-                ),
-                SizedBox(
-                  height: Responsive.isMobile(context) ? 32 : 30,
-                ),
-                Container(
-                  child: Container(
-                    child: Text(
-                      "Tools",
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: Responsive.isMobile(context)
-                      ? MainAxisAlignment.spaceBetween
-                      : MainAxisAlignment.start,
-                  children: [
-                    CardWidget(
-                        img: "assets/images/feedback.png",
-                        text: "Reviews",
-                        press: () {
-                          Navigator.of(context)
-                              .push(MaterialPageRoute(builder: (context) {
-                            return MenuDescription();
-                          }));
-                        }),
-                    if (!Responsive.isMobile(context))
-                      SizedBox(
-                        width: 20,
-                      ),
-                    CardWidget(
-                      img: "assets/images/diningtable.png",
-                      text: "Reservation",
-                      press: () {},
-                    ),
-                    if (!Responsive.isMobile(context))
-                      SizedBox(
-                        width: 20,
-                      ),
-                    CardWidget(
-                      img: "assets/images/pie-chart.png",
-                      text: "Analytics",
-                      press: () {},
+                        Spacer()
+                      ],
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: Responsive.isMobile(context) ? 30 : 30,
-                ),
-                Container(
-                  child: Container(
-                    child: Text(
-                      "Settings",
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  children: [
-                    CardWidget(
-                      img: "assets/images/user.png",
-                      text: "My Account",
-                      press: () {
-                        Navigator.of(context)
-                            .push(MaterialPageRoute(builder: (context) {
-                          return MyAccount();
-                        }));
-                      },
-                    ),
-                    SizedBox(
-                      width: Responsive.isMobile(context)
-                          ? MediaQuery.of(context).size.width * 0.074
-                          : 20,
-                    ),
-                    CardWidget(
-                      img: "assets/images/map.png",
-                      text: "Branches",
-                      press: () {},
-                    ),
-                  ],
-                ),
+                Obx(() => pages[controller.updateValue.toInt()])
               ],
             ),
           ),
-        ),
+        ) // child: Obx(() => pages[controller.updateValue.toInt()])),
+            ),
         bottomNavigationBar: Bottomnavigationbar());
   }
 }
